@@ -74,8 +74,8 @@ Installing
       $ npm install specify-framework
 
 
-Running Specify in the Browser
-''''''''''''''''''''''''''''''
+Using Specify in the Browser
+''''''''''''''''''''''''''''
 
 We'll be using Node modules for writing modular test files, and loading the
 Specify framework. Since Browsers don't implement Node modules by default,
