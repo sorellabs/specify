@@ -14,23 +14,21 @@ Signals
 =======
 
 .. class:: Hook
+   :noindex:
 
    .. code-block:: haskell
-      
-      type Hook
+
+      type Hook(Array<Future<Error, Void>>)
         actions: Array<Future<Error, Void>>
-      
+
       methods
-        run: @Hook => Void -> Rx.Observable[Error, α]
+        run: @Hook => Void -> Rx.Observable<Error, α>
 
+   Represents a list of actions that are to be ran in reaction to some event.
 
-  Hooks represent a list of actions that are to be ran in reaction to some
-  event.
+   .. rst-class:: detail-link
 
-  .. rst-class:: detail-link
-
-     :doc:`+ <hook>`
-
+      :doc:`+ <hook>`
 
 .. class:: Signal
    :noindex:
@@ -52,17 +50,7 @@ Signals
         fullTitle: @Signal => Void -> String
        
    Represents one of the important events that might happen when running
-   tests:
-
-   * **Started**: Used when a ``Suite`` or ``Case`` is about to start, contains
-     a reference to that test and a list of the names of all its parents.
-
-   * **Finished**: Used when a ``Suite`` or ``Case`` has finished
-     running. Contains a reference to that test and a list of the names of all
-     its parents.
-
-   * **TestResult**: Used when a ``Case`` has finished running, and always
-     included before ``Finished``. Contains the result of running the ``Case``.
+   tests.
 
    .. rst-class:: detail-link
 
@@ -72,7 +60,8 @@ Signals
 Tests
 =====
 
-.. data:: Test
+.. class:: Test
+   :noindex:
 
    .. code-block:: haskell
 
@@ -107,6 +96,7 @@ Results
 =======
 
 .. class:: Duration
+   :noindex:
 
    .. code-block:: haskell
 
@@ -128,6 +118,7 @@ Results
 
 
 .. class:: LogEntry
+   :noindex:
 
    .. code-block:: haskell
 
@@ -143,6 +134,7 @@ Results
 
 
 .. class:: Result
+   :noindex:
 
    .. code-block:: haskell
 
@@ -176,6 +168,7 @@ Reports
 =======
 
 .. class:: Report
+   :noindex:
 
    .. code-block:: haskell
 
@@ -202,6 +195,7 @@ Running
 =======
 
 .. class:: Config
+   :noindex:
 
    .. code-block:: haskell
 
@@ -217,6 +211,7 @@ Running
 
 
 .. function:: makeRunner(config, suites, reporter)
+   :noindex:
 
    .. code-block:: haskell
 
@@ -233,6 +228,7 @@ Running
 
 
 .. function:: run(config, suites, reporter)
+   :noindex:
 
    .. code-block:: haskell
 
@@ -249,6 +245,7 @@ Running
 
 
 .. function:: runWithDefaults(suites, reporter)
+   :noindex:
 
    .. code-block:: haskell
 
@@ -266,3 +263,8 @@ Running
 
 
 
+.. toctree::
+   :hidden:
+   
+   hook
+   signal
