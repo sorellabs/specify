@@ -34,15 +34,6 @@ Guides
          systems, such as CI servers.
     
 
-.. toctree::
-   :hidden:
-
-   quickstart/index
-   reference/index
-   api/index
-   setup/index
-   extending/index
-
 .. rst-class:: overview-list
 
 Indices and tables
@@ -57,7 +48,7 @@ Indices and tables
    * :ref:`General Index <genindex>`
          All functions, classes, terms, sections.
 
-   * :ref:`Glossary <glossary>`
+   * :doc:`Glossary <glossary>`
          Explains the most important terms.
 
    * :ref:`Search page <search>`
@@ -72,3 +63,14 @@ Other resources
    meta/issues
    meta/contributing
    meta/licence
+
+
+.. toctree::
+   :hidden:
+
+   quickstart/index
+   reference/index
+   api/index
+   setup/index
+   extending/index
+   glossary
