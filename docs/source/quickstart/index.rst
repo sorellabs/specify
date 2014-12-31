@@ -189,17 +189,32 @@ the compilation command. You can also use ``Grunt``, ``Make``, or any other
 task runner tool you feel comfortable with.
 
 
-Using the built-in test runner
-''''''''''''''''''''''''''''''
+Writing the runner
+''''''''''''''''''
 
-If you're running the tests directly, you may use the the command line tool to
-run them either on the Browser or Node. To do so, we invoke the ``specify``
-application from the command line, and give it the module we want to execute:
+To run these tests we'll write a simple JavaScript module that will do it for
+us, this way this module can be used to run the tests in Node, the Browser, in
+CI servers like Testling, etc.
 
-.. code-block:: shell
+Create a file called ``run-tests.js`` with the following content::
 
-   $ node_modules/.bin/specify test-add.js
-   
+    // First we load the Specify framework.
+    var specify = require('specify');
 
+    // Then we load the reporter we want to use to present the results of
+    // running the test. The `spec` reporter displays these information
+    // as a hierarchical specification-like format.
+    var reporter = specify.reporters.spec();
 
+    // We also need the list of suites that we want to run.
+    var suites = [
+      require('./test-add')
+    ];
+
+    // And finally, we pass the list of suites and the reporter to the
+    // built-in runner:
+    specify.runWithDefaults(suites, reporter);
+
+You may now run the tests in the command line by invoking ``node
+run-tests.js``.
 
