@@ -248,7 +248,7 @@ Running
       :doc:`+ <run>`
 
 
-.. function runWithDefaults(suites, reporter)
+.. function:: runWithDefaults(suites, reporter)
 
    .. code-block:: haskell
 
@@ -261,7 +261,7 @@ Running
 
    .. seealso::
 
-      Function :py:fun:`run`
+      Function :func:`run`
           ``runWithDefaults`` is just a partially applied ``run``.
 
 
