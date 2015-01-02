@@ -28,7 +28,7 @@ Signals
 
    .. rst-class:: detail-link
 
-      :doc:`+ <hook>`
+      :doc:`+ <Hook>`
 
 .. class:: Signal
    :noindex:
@@ -54,7 +54,7 @@ Signals
 
    .. rst-class:: detail-link
 
-      :doc:`+ <signal>`
+      :doc:`+ <Signal>`
 
 
 Tests
@@ -88,7 +88,7 @@ Tests
 
    .. rst-class:: detail-link
 
-      :doc:`+ <test>`
+      :doc:`+ <Test>`
 
 
 Results
@@ -113,7 +113,7 @@ Results
 
    .. rst-class:: detail-link
 
-      :doc:`+ <duration>`
+      :doc:`+ <Duration>`
 
 
 .. class:: LogEntry
@@ -129,7 +129,7 @@ Results
 
    .. rst-class:: detail-link
 
-      :doc:`+ <log-entry>`
+      :doc:`+ <LogEntry>`
 
 
 .. class:: Result
@@ -160,7 +160,7 @@ Results
 
    .. rst-class:: detail-link
 
-      :doc:`+ <result>`
+      :doc:`+ <Result>`
 
 
 Reports
@@ -188,7 +188,7 @@ Reports
 
    .. rst-class:: detail-link
 
-      :doc:`+ <report>`
+      :doc:`+ <Report>`
 
 Running
 =======
@@ -265,12 +265,12 @@ Running
 .. toctree::
    :hidden:
    
-   hook
-   signal
-   test
-   duration
-   log-entry
-   result
-   report
+   Hook
+   Signal
+   Test
+   Duration
+   LogEntry
+   Result
+   Report
    makeRunner
    run
