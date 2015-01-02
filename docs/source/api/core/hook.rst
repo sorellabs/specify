@@ -8,6 +8,24 @@ Type: Hook
       
       type Hook
         actions: Array<Future<Error, Void>>
+        
+      implements
+        Equality, Setter<Hook>, ToString, Extractor
+
+      methods
+        -- Creating instances
+        new Hook(Array<Future<Error, Void>>) -> Hook
+        create: { ρ | Hook } -> Hook
+        set: @Hook => { ρ | α >: Hook } -> Hook
+
+        -- Extracting information
+        actions: @Duration => Array<Future<Error, Void>>
+        
+        -- Comparing and testing
+        equals: @Hook => Hook -> Hook
+        
+        -- Converting to other types
+        toString: @Hook => Void -> String
       
 
    A Hook provides a representation of a set of actions to be executed in
@@ -19,6 +37,18 @@ Type: Hook
    always be self contained.
 
 
+Extracting information
+----------------------
+
+.. attribute:: actions
+
+   .. code-block:: haskell
+
+      Array<Future<Error, Void>>
+
+   The set of actions to be executed when running this hook.
+
+
 Constructing instances
 ----------------------
 
@@ -26,7 +56,7 @@ Constructing instances
 
    .. code-block:: haskell
 
-      { actions: Array<Future<Error, Void>> } -> Hook
+      { ρ | Hook } -> Hook
 
    Constructs a new Hook value with the given field values.
 

@@ -1,5 +1,5 @@
 ************
-Module: Core
+Module: core
 ************
 
 .. module:: core
@@ -18,7 +18,7 @@ Signals
 
    .. code-block:: haskell
 
-      type Hook(Array<Future<Error, Void>>)
+      type Hook
         actions: Array<Future<Error, Void>>
 
       methods
@@ -84,8 +84,7 @@ Tests
         run: [String], Config -> Rx.Observable[Error, Signal]
         
    The ``Test`` type models the components of a specification
-   hierarchy. ``Suite`` objects sit at the top and contain many ``Case`` and
-   other ``Suite`` objects.
+   hierarchy.
 
    .. rst-class:: detail-link
 
@@ -268,3 +267,10 @@ Running
    
    hook
    signal
+   test
+   duration
+   log-entry
+   result
+   report
+   makeRunner
+   run

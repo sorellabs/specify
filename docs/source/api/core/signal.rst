@@ -17,9 +17,41 @@ Type: Signal
                   | TestResult
                       value: Result
 
-      methods
-        fullTitle: @Signal => Void -> String
+      implements
+        Equality, Setter<Signal>, ToString, Extractor, Cata
 
+      methods
+        -- Creating instances
+        new Signal.Started(Test, Array<String>) -> Signal
+        new Signal.Finished(Test, Array<String>) -> Signal
+        new Signal.TestResult(Result) -> Signal
+
+        Started.create: { ρ | Started } -> Signal
+        Finished.create: { ρ | Finished } -> Signal
+        TestResult.create: { ρ | TestResult } -> Signal
+
+        Started.set: @Started => { ρ | α >: Started } -> Signal
+        Finished.set: @Finished => { ρ | α >: Finished } -> Signal
+        TestResult.set: @TestResult => { ρ | α >: TestResult } -> Signal
+
+        -- Comparing and testing
+        equals: @Signal => Signal -> Boolean
+        isStarted: @Signal => Boolean
+        isFinished: @Signal => Boolean
+        isTestResult: @Signal => Boolean
+        
+        -- Converting to other types
+        toString: @Signal => Void -> String
+
+        -- Extracting information
+        fullName: @Signal => Void -> String
+
+        -- Transforming signals
+        cata: @Signal => Pattern -> α
+              where type Pattern
+                Started: (Test, Array<String>) -> α
+                Finished: (Test, Array<String>) -> α
+                TestResult: Result -> α
 
    The Signal ADT models the possible signals that might be used in the stream
    of events in a test execution.
@@ -42,9 +74,9 @@ Creating instances
 
    .. code-block:: haskell
 
-      @Started => { value: Test, path: Array<String> } -> Signal
-      @Finished => { value: Test, path: Array<String> } -> Signal
-      @TestResult => { value: Result> } -> Signal
+      Started.create: { ρ | Started } -> Signal
+      Finished.create: { ρ | Finished } -> Signal
+      TestResult.create: { ρ | TestResult } -> Signal
 
    Constructs a new Signal value with the given field values.
 
@@ -71,9 +103,9 @@ Creating instances
 
    .. code-block:: haskell
 
-      @Started => { value: Test, path: Array<String> } -> Signal
-      @Finished => { value: Test, path: Array<String> } -> Signal
-      @TestResult => { value: Result } -> Signal
+      @Started => { ρ | α >: Started  } -> Signal
+      @Finished => { ρ | α >: Finished } -> Signal
+      @TestResult => { ρ | α >: TestResult } -> Signal
 
    ``.set()`` is an alternative to constructing a new Signal object
    without having to pass all of the fields, when you want an object
@@ -90,7 +122,7 @@ Comparing and testing
 
 .. method:: Signal.equals(aSignal)
 
-   :return: ``true`` if the two Signals are the same object.
+   :returns: ``true`` if the two Signals are the same object.
 
    .. code-block:: haskell
 
@@ -137,6 +169,9 @@ Converting to other types
 
       @Signal => Void -> String
 
+
+Extracting information
+----------------------
 
 .. method:: Signal.fullName()
 
