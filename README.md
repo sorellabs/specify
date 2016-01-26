@@ -61,10 +61,12 @@ makes just writing tests simpler.
 
 ## Supported platforms
 
-Specify is supported in all platforms that support ECMAScript 5. For
-platforms that don't support ECMAScript 5, (like IE8 and 9) the
-[es5-shim][] library can be used to provide the additional runtime
-support.
+Specify is supported in all platforms that support ECMAScript 5.
+
+> **NOTE**  
+> For platforms that don't support ECMAScript 5, (like IE8 and 9) the
+> [es5-shim][] library can be used to provide the additional runtime
+> support.
 
 [es5-shim]: https://github.com/es-shims/es5-shim
 
