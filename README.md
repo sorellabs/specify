@@ -90,6 +90,4 @@ Note that all interactions in this project are subject to Origami Tower's
 
 ## Licence
 
-Copyright (c) 2013-2014 [Origami Tower](http://www.origamitower.com).
-
-Released under the [MIT](http://origami-tower.mit-license.org/) licence.
+Specify is copyright (c) Quildreen Motta 2014-2016, and released under the MIT licence. See the `LICENCE` file in this repository for detailed information.
