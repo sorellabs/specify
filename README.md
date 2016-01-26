@@ -43,7 +43,7 @@ platforms that don't implement Node-style modules, like the Browser.
 ( TBD )
 
 
-## Why not <insert-popular-testing-library-here>?
+## Why not (insert-popular-testing-library-here)?
 
 Mocha, and other popular BDD testing frameworks, have been designed with
 a particular environment in mind (Node for Mocha, Browser for Jasmine),
