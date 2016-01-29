@@ -27,8 +27,7 @@ The officially supported way of getting Specify is through [npm][]:
 > **NOTE**
 >
 > If you don't have npm, you'll need to install Node.js and npm in your
-> system before installing My Library. For browsers, you can follow the
-> alternative installation instructions instead.
+> system before installing Specify.
 
 A tool like [Browserify][] or [Webpack][] can be used to run Specify in
 platforms that don't implement Node-style modules, like the Browser.
